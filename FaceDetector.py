@@ -1,3 +1,5 @@
+#!/usr/local/bin/python3
+
 import cv2
 from random import randrange
 
@@ -19,11 +21,15 @@ while True:
 
     # de-structure coordinates and print rectangle
     for (x, y, w, h) in face_coordinates:
-        cv2.rectangle(frame, (x, y), (x + w, y + h), (randrange(128,256), randrange(128,256), randrange(128,256)), 4)
+        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 4)
 
     # show image
     cv2.imshow('Face Detector', frame)
-    cv2.waitKey(1)
+    key = cv2.waitKey(1)
 
+    # to break loop
+    if key == 81 or key == 113:
+        break
 
+webcam.release()
 
