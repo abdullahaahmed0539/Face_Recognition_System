@@ -1,4 +1,3 @@
-#!/usr/local/bin/python3
 
 import cv2
 from random import randrange
@@ -32,4 +31,3 @@ while True:
         break
 
 webcam.release()
-
